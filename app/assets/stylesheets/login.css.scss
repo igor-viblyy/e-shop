@@ -1,0 +1,29 @@
+.auth-block
+{
+  background: #BBBBBB;
+  width: 400px;
+  min-height: 350px;
+  border: 1px solid #666666;
+  border-radius: 8px;
+  margin: 150px auto;
+  padding: 0 auto;
+
+  h2
+  {
+    text-align: center;
+  }
+
+  input[type="email"]
+  {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  input[type="password"]
+  {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
