@@ -1,0 +1,7 @@
+.jumbotron
+  .container
+    =simple_form_for @category, url: admins_categories_path, html: { role: 'form' } do |f|
+      .form-group
+        =f.input :name, label: false, placeholder: 'Add name Category', input_html: { class: 'form-control' }
+      .form-group
+        =f.button :submit, "Add category", class: 'btn btn-primary'

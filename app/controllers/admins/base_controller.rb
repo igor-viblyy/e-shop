@@ -2,6 +2,7 @@ class Admins::BaseController < ApplicationController
 
   layout 'admin_application'
 
+  before_action :authenticate_user!
   before_action :current_admin
 
   def index

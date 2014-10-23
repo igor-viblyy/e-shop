@@ -2,11 +2,17 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :admins do
+
+    resources :categories do
+      resources :subcategories
+    end
+
     root 'base#index'
+
   end
 
   devise_for :users
-  #devise_for :admins
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
