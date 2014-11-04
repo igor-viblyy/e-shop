@@ -1,22 +1,45 @@
 class Admins::SubcategoriesController < Admins::BaseController
 
+  add_breadcrumb "Subcategories"
+
   def index
-    @subcategories = @category.subcategories.all
+    @subcategories = Subcategory.all
   end
 
-  def new
-    @subcategory = @category.subcategories.new
+  def create
+    @category = Category.find(params[:category_id])
+    @subcategory = @category.subcategories.create(params_subcategory)
+
+    redirect_to admins_category_path(@category)
+
   end
 
   def edit
-
+    @category = Category.find(params[:category_id])
+    @subcategory = @category.subcategories.find(params[:id])
   end
 
   def update
+    @category = Category.find(params[:category_id])
+    @subcategory = @category.subcategories.update_attributes(params_subcategory)
 
+    redirect_to admins_category_path(@category)
   end
 
   def destroy
+    @category = Category.find(params[:category_id])
+    @subcategory = @category.subcategories.find(params[:id])
+
+    @subcategory.destroy
+
+    redirect_to admins_category_path(@category)
 
   end
+
+  private
+
+  def params_subcategory
+    params.required(:subcategory).permit(:id, :name, :category_id)
+  end
+
 end

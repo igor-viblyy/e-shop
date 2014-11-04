@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :admins do
-
     resources :categories do
       resources :subcategories
     end
 
-    root 'base#index'
+    resources :users
 
+    root 'base#index'
   end
 
   devise_for :users

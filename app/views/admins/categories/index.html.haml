@@ -14,8 +14,10 @@
           -@categories.each do |category|
             %tr
               %td= category.id
-              %td= category.name
-              %td Subcategory
+              %td= link_to "#{category.name}", admins_category_path(category)
+              %td
+                -category.subcategories.each do |subcategory|
+                  =subcategory.name + ","
               %td
                 = link_to " ", edit_admins_category_path(category), class: 'glyphicon glyphicon-edit no-text-decoration'
                 = link_to " ", admins_category_path(category), method: :delete, class: 'glyphicon glyphicon-trash no-text-decoration'

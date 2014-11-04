@@ -5,6 +5,8 @@ class Admins::BaseController < ApplicationController
   before_action :authenticate_user!
   before_action :current_admin
 
+  add_breadcrumb "Dashboard", :admins_root_path
+
   def index
 
   end

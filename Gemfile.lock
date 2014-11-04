@@ -8,10 +8,17 @@ GIT
       hashie
     elasticsearch-rails (0.1.6)
 
+GIT
+  remote: git://github.com/ko1/debugger2.git
+  revision: 868f94f8b67e13f3cd3921be15168dcebf2e7019
+  specs:
+    debugger2 (1.0.0.beta2)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    RedCloth (4.2.9)
     actionmailer (4.1.6)
       actionpack (= 4.1.6)
       actionview (= 4.1.6)
@@ -54,11 +61,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    breadcrumbs_on_rails (2.3.0)
     builder (3.2.2)
-    byebug (3.5.1)
-      columnize (~> 0.8)
-      debugger-linecache (~> 1.2)
-      slop (~> 3.6)
     callsite (0.0.11)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -143,8 +147,6 @@ GEM
       spork (>= 0.8.4)
     haml (4.1.0.beta.1)
       tilt
-    haml-contrib (1.0.0.1)
-      haml (>= 3.2.0.alpha.13)
     hashie (3.3.1)
     hike (1.2.3)
     hitimes (1.2.2)
@@ -233,9 +235,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.2)
       json (~> 1.4)
-    redcloth-rails (0.2.0)
-      RedCloth (>= 4.2.0)
-      rails (>= 3.1.0)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
     rmagick (2.13.3)
@@ -321,17 +320,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  RedCloth
   annotate
   better_errors
   binding_of_caller
   bootstrap-sass
-  byebug
+  breadcrumbs_on_rails
   capybara
   carrierwave
   coffee-rails (~> 4.0.0)
   country_select
   database_cleaner
+  debugger2!
   devise
   elasticsearch-model!
   elasticsearch-rails!
@@ -341,7 +340,6 @@ DEPENDENCIES
   guard-rspec
   guard-spork
   haml
-  haml-contrib
   jbuilder (~> 2.0)
   jquery-rails
   meta_request
@@ -350,7 +348,6 @@ DEPENDENCIES
   pg
   rack-mini-profiler
   rails (= 4.1.6)
-  redcloth-rails
   rmagick
   rspec-rails
   rubocop

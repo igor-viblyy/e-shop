@@ -31,7 +31,7 @@ group :development do
   gem 'annotate'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'byebug'
+#  gem 'byebug'
   gem 'rack-mini-profiler', require: false
 end
 
@@ -60,9 +60,10 @@ gem 'country_select'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'haml'
-gem 'haml-contrib'
-gem 'redcloth-rails'
-gem 'RedCloth'
+gem 'breadcrumbs_on_rails'
+#gem 'haml-contrib'
+#gem 'redcloth-rails'
+#gem 'RedCloth'
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 
@@ -79,5 +80,5 @@ gem 'simplecov', :require => false, group: :test
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger2', :git => "git://github.com/ko1/debugger2.git", group: [:development, :test]
 
