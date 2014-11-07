@@ -12,4 +12,4 @@ if user.admin?
   User.create!(email: 'admins@mail.com', password: 'password', admins: true)
 end
 
-User.create!(email: 'user@mail.com', password: 'password', admins: false)
+User.create!(email: 'user@mail.com', password: 'password', admins: false)   
