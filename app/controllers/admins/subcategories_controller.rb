@@ -1,6 +1,6 @@
 class Admins::SubcategoriesController < Admins::BaseController
 
-  before_action 'find_category'
+  before_action 'find_category', only: [:create, :edit, :update, :destroy]
 
   add_breadcrumb "Subcategories"
 
@@ -9,7 +9,7 @@ class Admins::SubcategoriesController < Admins::BaseController
   end
 
   def create
-    @category = Category.find(params[:category_id])
+    #@category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.create(params_subcategory)
 
     redirect_to admins_category_path(@category)
@@ -17,19 +17,19 @@ class Admins::SubcategoriesController < Admins::BaseController
   end
 
   def edit
-    @category = Category.find(params[:category_id])
+    #@category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:category_id])
+    #@category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.update_attributes(params_subcategory)
 
     redirect_to admins_category_path(@category)
   end
 
   def destroy
-    @category = Category.find(params[:category_id])
+    #@category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.find(params[:id])
 
     @subcategory.destroy
@@ -41,7 +41,7 @@ class Admins::SubcategoriesController < Admins::BaseController
   private
 
   def params_subcategory
-    params.required(:subcategory).permit(:id, :name, :category_id)
+    params.required(:subcategory).permit(:id, :name, :updated_at, :created_at, :category_id)
   end
 
   def find_category
