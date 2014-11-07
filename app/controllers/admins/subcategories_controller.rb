@@ -1,5 +1,7 @@
 class Admins::SubcategoriesController < Admins::BaseController
 
+  before_action 'find_category'
+
   add_breadcrumb "Subcategories"
 
   def index
@@ -40,6 +42,10 @@ class Admins::SubcategoriesController < Admins::BaseController
 
   def params_subcategory
     params.required(:subcategory).permit(:id, :name, :category_id)
+  end
+
+  def find_category
+    @category = Category.find(params[:category_id])
   end
 
 end

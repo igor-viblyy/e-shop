@@ -1,0 +1,34 @@
+=simple_form_for [:admins, @product], html: { role: 'form' } do |f|
+
+  .form-group
+    =f.input :title, label: false, placeholder: 'Add name product', input_html: { class: 'form-control' }
+
+  .form-group
+    =f.input :description, as: :text, label: false, placeholder: 'Add description product', input_html: { class: 'form-control', rows: 5 }
+
+  .form-group
+    =f.input :price, label: false, placeholder: 'Add price product', input_html: { class: 'form-control' }
+
+  .form-group
+
+    -if @product.image?
+      =image_tag @product.image_url(:thumb), class: 'img-thumbnail'
+    -else
+      %img.img-thumbnail{:src => "/assets/blank-img.png"}/
+
+    %br
+    =f.input :image, as: :file, label: false
+
+  .checkbox
+    %label{ style: 'position: relative; right: 20px; top: 15px;'}
+      =f.input :status, as: :boolean, input_html: { style: 'position: relative; bottom: 30px;', value: 1 }
+
+  .form-group
+    =f.association :category, input_html: { class: 'form-control' }
+
+  .form-group
+    =f.association :subcategory, input_html: { class: 'form-control' }
+
+  .form-group
+    =f.button :submit, class: 'btn btn-primary'
+    =link_to "Back", admins_products_path, class: 'btn btn-default'
