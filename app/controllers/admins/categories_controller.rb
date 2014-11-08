@@ -36,7 +36,6 @@ class Admins::CategoriesController < Admins::BaseController
   end
 
   def update
-
     if @category.update_attributes!(params_category)
       redirect_to admin_category_path(@category)
     else
@@ -45,8 +44,6 @@ class Admins::CategoriesController < Admins::BaseController
   end
 
   def destroy
-    #@category = Category.find(params[:id])
-
     if @category.destroy
       redirect_to admin_categories_path
     end

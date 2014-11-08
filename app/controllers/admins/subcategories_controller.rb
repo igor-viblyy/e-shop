@@ -9,7 +9,6 @@ class Admins::SubcategoriesController < Admins::BaseController
   end
 
   def create
-    #@category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.create(params_subcategory)
 
     redirect_to admins_category_path(@category)
@@ -17,19 +16,16 @@ class Admins::SubcategoriesController < Admins::BaseController
   end
 
   def edit
-    #@category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.find(params[:id])
   end
 
   def update
-    #@category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.update_attributes(params_subcategory)
 
     redirect_to admins_category_path(@category)
   end
 
   def destroy
-    #@category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.find(params[:id])
 
     @subcategory.destroy
