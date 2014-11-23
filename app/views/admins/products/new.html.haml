@@ -1,4 +1,18 @@
-.jumbotron
-  .container
-    =render 'form'
+.col-md-12
+  %ul.nav.nav-tabs{ role: 'tablist' }
+    %li.active{ role: 'presentation' }
+      %a{ href: '#product', role: 'tab', 'data-toggle' => 'tab' } Product
 
+    -#%li{ role: 'presentation'}
+    -#  -if @product.id?
+    -#    %a{ href: '#gallery', role: 'tab', 'data-toggle' => 'tab' } Gallery
+    -#  -else
+    -#    %a{ role: 'tab', 'data-toggle' => 'tab' } Gallery
+
+
+  .jumbotron
+    .tab-content
+      .tab-pane.active{ role: 'tabpane1', id: 'product' }
+        =render 'form'
+      .tab-pane{ role: 'tabpane2', id: 'gallery' }
+        //=render 'gallery_form' if @product.id?

@@ -7,6 +7,7 @@ class Admins::ProductsController < Admins::BaseController
 
   def index
     @products = Product.all
+    #@galleries = @product.galleries.all
   end
 
   def show
@@ -16,15 +17,18 @@ class Admins::ProductsController < Admins::BaseController
   def new
     add_breadcrumb "New"
     @product = Product.new
+
   end
 
   def create
     @product = Product.create!(params_product)
+
     if @product.save
       redirect_to admins_products_path
     else
       render 'admins/products/new'
     end
+
   end
 
   def edit

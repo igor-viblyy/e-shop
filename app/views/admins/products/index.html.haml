@@ -7,7 +7,7 @@
         .media
           .col-md-3
             %a.media-left.media-middle{href: "#{admins_product_path(product)}"}
-              =image_tag product.image_url(:thumb)
+              =image_tag product.image_url(:thumb), class: 'img-responsive img-rounded img-thumbnail'
 
           .media-body
             %h5.media-heading
@@ -43,5 +43,5 @@
 
             %h5.media-heading
               %strong Action:
-              =link_to " ", edit_admins_product_path(product), class: 'glyphicon glyphicon-edit'
-              =link_to " ", admins_product_path(product), method: :delete, class: 'glyphicon glyphicon-trash'
+              =link_to " ", edit_admins_product_path(product), class: 'glyphicon glyphicon-edit', title: 'edit'
+              =link_to " ", admins_product_path(product), method: :delete, class: 'glyphicon glyphicon-trash', title: 'delete'

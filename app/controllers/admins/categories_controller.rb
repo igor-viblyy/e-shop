@@ -37,15 +37,15 @@ class Admins::CategoriesController < Admins::BaseController
 
   def update
     if @category.update_attributes!(params_category)
-      redirect_to admin_category_path(@category)
+      redirect_to admins_category_path(@category)
     else
-      redirect_to edit_admin_category_path(@category)
+      redirect_to edit_admins_category_path(@category)
     end
   end
 
   def destroy
     if @category.destroy
-      redirect_to admin_categories_path
+      redirect_to admins_categories_path
     end
   end
 

@@ -1,13 +1,23 @@
-.jumbotron
-  .container
-    %h3 Category
-    %p
-      %strong Name category:
-      =@category.name
-    %br
+.row
+  .col-md-12
+    %ul.nav.nav-tabs{ role: 'tablist' }
+      %li.active{ role: 'presentation' }
+        %a{ href: '#category', role: 'tab', 'data-toggle' => 'tab' } Category
+      %li{ role: 'presentation' }
+        %a{ href: '#subcategory', role: 'tab', 'data-toggle' => 'tab' } Subcategory
 
-    %h3 Subcategories
-    =render "admins/categories/subcategories_show"
+    .jumbotron
+      .row
+        .tab-content
+          .tab-pane.active{ role: 'tabpanel', id: 'category' }
+            %p
+              %strong Name category:
+              =@category.name
 
-    %h3 Add Subcategories
-    =render "admins/categories/subcategories_form"
+            .btn-group{ role: 'group', 'aria-label' => 'action'}
+              =link_to 'Edit', edit_admins_category_path(@category), class: 'btn btn-warning', role: 'group', 'aria-label' => 'action'
+              =link_to 'Back', admins_categories_path, class: 'btn btn-default', role: 'group', 'aria-label' => 'action'
+              =link_to 'Delete', admins_category_path, method: :delete, class: 'btn btn-danger', role: 'group', 'aria-label' => 'action'
+
+          .tab-pane{ role: 'tabpanel', id: 'subcategory' }
+            =render "subcategories_form"

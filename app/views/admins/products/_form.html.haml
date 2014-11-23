@@ -16,8 +16,7 @@
     -else
       %img.img-thumbnail{:src => "/assets/blank-img.png"}/
 
-    %br
-    =f.input :image, as: :file, label: false
+    =f.input :image, as: :file, label: false, input_html: { style: 'padding-top: 15px;' }
 
   .checkbox
     %label{ style: 'position: relative; right: 20px; top: 15px;'}

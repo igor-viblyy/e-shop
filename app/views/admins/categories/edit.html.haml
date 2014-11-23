@@ -1,8 +1,24 @@
-.jumbotron
-  .container
-    =simple_form_for @category, url: admins_categories_path, html: { role: 'form' } do |f|
-      .form-group
-        =f.input :name, label: false, placeholder: 'Add name Category', input_html: { class: 'form-control' }
-      .form-group
-        =f.button :submit, "Edit category", class: 'btn btn-primary'
-        =link_to "Back", admins_categories_path, class: 'btn btn-default'
+.row
+  .col-md-12
+    %ul.nav.nav-tabs{ role: 'tablist' }
+      %li.active{ role: 'presentation' }
+        %a{ href: '#category', role: 'tab', 'data-toggle' => 'tab' } Category
+      %li{ role: 'presentation' }
+        %a{ href: '#subcategory', role: 'tab', 'data-toggle' => 'tab' } Subcategory
+
+    .jumbotron
+      .row
+        .tab-content
+          .tab-pane.active{ role: 'tabpanel', id: 'category' }
+            =render 'form'
+
+          .tab-pane{ role: 'tabpanel', id: 'subcategory' }
+            -#=render "subcategories_form"
+            %table.table.table-striped
+              %tbody
+                -@category.subcategories.each do |subcategory|
+                  %tr
+                    %td=subcategory.name
+                    %td
+                      =link_to " ", [:edit, :admins, subcategory.category, subcategory], class: "glyphicon glyphicon-edit"
+                      =link_to " ", [:admins, subcategory.category, subcategory], method: :delete, class: "glyphicon glyphicon-trash"

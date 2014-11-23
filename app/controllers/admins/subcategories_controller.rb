@@ -8,6 +8,10 @@ class Admins::SubcategoriesController < Admins::BaseController
     @subcategories = Subcategory.all
   end
 
+  def show
+
+  end
+
   def create
     @subcategory = @category.subcategories.create(params_subcategory)
 
@@ -17,9 +21,11 @@ class Admins::SubcategoriesController < Admins::BaseController
 
   def edit
     @subcategory = @category.subcategories.find(params[:id])
+    #@subcategory = Subcategory.find(params[:id])
   end
 
   def update
+    @subcategory = @category.subcategories.find(params[:id])
     @subcategory = @category.subcategories.update_attributes(params_subcategory)
 
     redirect_to admins_category_path(@category)

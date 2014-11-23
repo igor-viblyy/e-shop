@@ -20,6 +20,7 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :subcategory
+  has_one :gallery, dependent: :destroy
 
   validates :title, presence: true
   validates :description, presence: true
