@@ -1,53 +1,7 @@
-.row
-  .col-md-12
-    %ul.nav.nav-tabs{ role: 'tablist' }
-      %li.active{ role: 'presentation' }
-        %a{ href: '#show_product', role: 'tab', 'data-toggle' => 'tab' }= @product.title
+.container
+  .col-md-6
+    =image_tag @product.image_url(:show_image)
+  .col-md-6
+    .bs-callout.red
+      %h2= @product.title
 
-      %li{ role: 'presentation' }
-        %a{ href: '#gallery', role: 'tab', 'data-toggle' => 'tab' } Gallery
-
-    .jumbotron
-      .row
-        .tab-content
-          .tab-pane.active{ role: 'tabpanel', id: 'show_product' }
-            .col-md-6
-              =image_tag @product.image_url(:show_image)
-            .col-md-6
-
-              %strong Name:
-              = @product.title
-
-              %br
-              %strong Description:
-              = @product.description
-
-              %br
-              %strong Create:
-              = @product.created_at
-
-              %br
-              %strong Price:
-              = @product.price
-
-              %br
-              %strong Status:
-              -if @product.status == true
-                %button.btn.btn-xs.btn-success{ type: 'button' } Active
-              -else
-                %button.btn.btn-xs.btn-danger{ type: 'button' } Not Active
-
-              %br
-              %strong Gallery:
-              -#-@product.gallery.each do |gl|
-              -#  =gl.name
-
-              %br
-              %br
-              .btn-group{ role: 'group', 'aria-label' => 'action' }
-                =link_to "Edit", edit_admins_product_path, class: 'btn btn-warning', role: 'group', 'aria-label' => 'action'
-                =link_to "Back", admins_products_path, class: 'btn btn-default', role: 'group', 'aria-label' => 'action'
-                =link_to "Delete", admins_product_path(@product), class: 'btn btn-danger', role: 'group', 'aria-label' => 'action'
-
-          .tab-pane{ role: 'tabpanel', id: 'gallery' }
-            =render 'gallery_form'
