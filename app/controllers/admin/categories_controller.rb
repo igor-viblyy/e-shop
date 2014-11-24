@@ -9,7 +9,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
-    add_breadcrumb "Show category", admin_category_path
+    add_breadcrumb "#{@category.name}", admin_category_path
   end
 
   def new
