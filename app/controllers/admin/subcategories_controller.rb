@@ -1,4 +1,4 @@
-class Admins::SubcategoriesController < Admins::BaseController
+class Admin::SubcategoriesController < Admin::BaseController
 
   before_action 'find_category', only: [:create, :edit, :update, :destroy]
 

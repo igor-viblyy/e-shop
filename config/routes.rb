@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  namespace :admins do
+  namespace :admin do
     resources :products
 
     resources :categories do
@@ -64,9 +64,9 @@ Rails.application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admins do
-  #     # Directs /admins/products/* to Admin::ProductsController
-  #     # (app/controllers/admins/products_controller.rb)
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
 end

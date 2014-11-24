@@ -6,14 +6,14 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      =link_to 'E-SHOP', admins_root_path, class: 'navbar-brand'
+      =link_to 'E-SHOP', admin_root_path, class: 'navbar-brand'
 
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         -if signed_in? && current_user.admin?
-          %li= link_to 'Users', admins_users_path
-          %li= link_to 'Categories', admins_categories_path
-          %li= link_to 'Product', admins_products_path
+          %li= link_to 'Users', admin_users_path
+          %li= link_to 'Categories', admin_categories_path
+          %li= link_to 'Product', admin_products_path
           %li= link_to 'Pages'
           %li= link_to 'Modules'
       %ul.nav.navbar-nav.navbar-right

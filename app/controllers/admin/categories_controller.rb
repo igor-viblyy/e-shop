@@ -1,19 +1,19 @@
-class Admins::CategoriesController < Admins::BaseController
+class Admin::CategoriesController < Admin::BaseController
 
   before_action 'find_category', only: [:show, :edit, :update, :destroy]
 
-  add_breadcrumb "Categories", :admins_categories_path
+  add_breadcrumb "Categories", :admin_categories_path
 
   def index
     @categories = Category.all
   end
 
   def show
-    add_breadcrumb "Show category", admins_category_path
+    add_breadcrumb "Show category", admin_category_path
   end
 
   def new
-    add_breadcrumb "New Category", new_admins_category_path
+    add_breadcrumb "New Category", new_admin_category_path
     @category = Category.new
 
     if @category.id?
@@ -25,14 +25,14 @@ class Admins::CategoriesController < Admins::BaseController
     @category = Category.create!(params_category)
 
     if @category.save
-      redirect_to admins_categories_path
+      redirect_to admin_categories_path
     else
-      redirect_to new_admins_category_path
+      redirect_to new_admin_category_path
     end
   end
 
   def edit
-    add_breadcrumb "Edit category #{@category.name}", edit_admins_category_path(@category)
+    add_breadcrumb "Edit category #{@category.name}", edit_admin_category_path(@category)
   end
 
   def update

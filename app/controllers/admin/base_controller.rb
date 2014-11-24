@@ -1,11 +1,11 @@
-class Admins::BaseController < ApplicationController
+class Admin::BaseController < ApplicationController
 
   layout 'admin_application'
 
   before_action :authenticate_user!
   before_action :current_admin
 
-  add_breadcrumb "Dashboard", :admins_root_path
+  add_breadcrumb "Dashboard", :admin_root_path
 
   def index
 
