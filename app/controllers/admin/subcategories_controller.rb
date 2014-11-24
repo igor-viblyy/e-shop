@@ -1,13 +1,14 @@
 class Admin::SubcategoriesController < Admin::BaseController
 
-  before_action 'find_category', only: [:index, :create, :edit, :update, :destroy]
+  before_action 'find_category', only: [:create, :edit, :update, :destroy]
 
   before_action 'find_subcategory', only: [:edit, :update, :destroy]
+
 
   def create
     @subcategory = @category.subcategories.create(params_subcategory)
 
-    redirect_to admin_category_path(@category)
+    redirect_to admins_category_path(@category)
   end
 
   def edit
@@ -15,15 +16,15 @@ class Admin::SubcategoriesController < Admin::BaseController
   end
 
   def update
-    if @subcategory.update_attributes(params_subcategory)
-      redirect_to admin_category_path(@category)
-    end
+    @subcategory.update_attributes(params_subcategory)
+
+    redirect_to admins_category_path(@category)
   end
 
   def destroy
     @subcategory.destroy
 
-    redirect_to admin_category_path(@category)
+    redirect_to admins_category_path(@category)
   end
 
   private
@@ -39,4 +40,5 @@ class Admin::SubcategoriesController < Admin::BaseController
   def find_subcategory
     @subcategory = @category.subcategories.find(params[:id])
   end
+
 end

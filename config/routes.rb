@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     #   resources :images
     # end
 
-    #resource :subcategories
-
     resources :products do
       resources :galleries do
         resources :images
