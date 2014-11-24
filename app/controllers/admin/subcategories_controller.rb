@@ -4,6 +4,7 @@ class Admin::SubcategoriesController < Admin::BaseController
 
   before_action 'find_subcategory', only: [:edit, :update, :destroy]
 
+  add_breadcrumb "Subcategories"
 
   def create
     @subcategory = @category.subcategories.create(params_subcategory)
@@ -12,7 +13,7 @@ class Admin::SubcategoriesController < Admin::BaseController
   end
 
   def edit
-
+    add_breadcrumb "Edit #{@subcategory.name}"
   end
 
   def update
@@ -35,6 +36,7 @@ class Admin::SubcategoriesController < Admin::BaseController
 
   def find_category
     @category = Category.find(params[:category_id])
+    add_breadcrumb "Categories", admin_categories_path
   end
 
   def find_subcategory
