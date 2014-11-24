@@ -1,4 +1,4 @@
-=simple_form_for ([:admins, @category, @category.subcategories.build]), html: { role: 'form' } do |f|
+=simple_form_for ([:admin, @category, @category.subcategories.build]), html: { role: 'form' } do |f|
   .form-group
     =f.input :name, label: false, placeholder: 'Add subcategory', input_html: { class: 'form-control' }
   .form-group

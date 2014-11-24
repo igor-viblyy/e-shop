@@ -8,7 +8,7 @@
 
 if User.blank?
   User.create!([
-                { email: 'admins@mail.com', password: 'password', admin: true },
+                { email: 'admin@mail.com', password: 'password', admin: true },
                 { email: 'user@mail.com', password: 'password', admin: false }
               ])
 end

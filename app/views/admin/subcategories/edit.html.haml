@@ -1,7 +1,7 @@
 .jumbotron
   .row
     .col-md-12
-      =simple_form_for [:admins, @subcategory], html: { role: 'form' } do |f|
+      =simple_form_for ([:admin, @category, @subcategory]), html: { role: 'form' } do |f|
         .form-group
           =f.input :name, label: false, placeholder: 'Add subcategory name', input_html: { class: 'form-control'}
         .form-group

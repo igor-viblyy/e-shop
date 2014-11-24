@@ -1,6 +1,6 @@
 .jumbotron
   .add_button
-    =link_to "Add category", new_admins_category_path, class: 'btn btn-primary'
+    =link_to "Add category", new_admin_category_path, class: 'btn btn-primary'
   .container
     .row
       %table.table.table-striped
@@ -14,10 +14,10 @@
           -@categories.each do |category|
             %tr
               %td= category.id
-              %td= link_to "#{category.name}", admins_category_path(category)
+              %td= link_to "#{category.name}", admin_category_path(category)
               %td
                 -category.subcategories.each do |subcategory|
                   =subcategory.name + ","
               %td
-                = link_to " ", edit_admins_category_path(category), class: 'glyphicon glyphicon-edit no-text-decoration'
-                = link_to " ", admins_category_path(category), method: :delete, class: 'glyphicon glyphicon-trash no-text-decoration'
+                = link_to " ", edit_admin_category_path(category), class: 'glyphicon glyphicon-edit no-text-decoration'
+                = link_to " ", admin_category_path(category), method: :delete, class: 'glyphicon glyphicon-trash no-text-decoration'

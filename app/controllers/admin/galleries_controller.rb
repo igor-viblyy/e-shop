@@ -1,4 +1,4 @@
-class Admins::GalleriesController < Admins::BaseController
+class Admin::GalleriesController < Admin::BaseController
 
   #before_action 'find_gallery', only: [:show, :edit, :update, :destroy]
   before_action 'find_product', only: [:create, :edit, :update, :destroy]

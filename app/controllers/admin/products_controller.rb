@@ -1,4 +1,4 @@
-class Admins::ProductsController < Admins::BaseController
+class Admin::ProductsController < Admin::BaseController
 
   before_action 'find_product', only: [:show, :edit, :update, :destroy]
 
@@ -26,7 +26,7 @@ class Admins::ProductsController < Admins::BaseController
     if @product.save
       redirect_to admins_products_path
     else
-      render 'admins/products/new'
+      render 'admin/products/new'
     end
 
   end

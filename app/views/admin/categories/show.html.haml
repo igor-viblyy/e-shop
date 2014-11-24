@@ -13,11 +13,15 @@
             %p
               %strong Name category:
               =@category.name
+            %p
+              %strong Subcategory:
+              -@category.subcategories.each do |subcategory|
+                =subcategory.name
 
             .btn-group{ role: 'group', 'aria-label' => 'action'}
-              =link_to 'Edit', edit_admins_category_path(@category), class: 'btn btn-warning', role: 'group', 'aria-label' => 'action'
-              =link_to 'Back', admins_categories_path, class: 'btn btn-default', role: 'group', 'aria-label' => 'action'
-              =link_to 'Delete', admins_category_path, method: :delete, class: 'btn btn-danger', role: 'group', 'aria-label' => 'action'
+              =link_to 'Edit', edit_admin_category_path(@category), class: 'btn btn-warning', role: 'group', 'aria-label' => 'action'
+              =link_to 'Back', admin_categories_path, class: 'btn btn-default', role: 'group', 'aria-label' => 'action'
+              =link_to 'Delete', admin_category_path, method: :delete, class: 'btn btn-danger', role: 'group', 'aria-label' => 'action'
 
           .tab-pane{ role: 'tabpanel', id: 'subcategory' }
             =render "subcategories_form"

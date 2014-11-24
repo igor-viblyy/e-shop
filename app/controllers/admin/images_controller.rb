@@ -1,4 +1,4 @@
-class Admins::ImagesController < ApplicationController
+class Admin::ImagesController < Admin::BaseController
 
   before_action 'find_gallery', only: [:create, :edit, :update, :destroy]
 

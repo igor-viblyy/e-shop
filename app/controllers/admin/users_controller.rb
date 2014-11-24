@@ -1,4 +1,4 @@
-class Admins::UsersController < Admins::BaseController
+class Admin::UsersController < Admin::BaseController
 
   add_breadcrumb "Users", :admins_users_path
 
