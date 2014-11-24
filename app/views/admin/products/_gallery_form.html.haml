@@ -1,0 +1,10 @@
+=simple_form_for [:admin, @product, @product.build_gallery], html: { role: 'form' } do |f|
+
+  .form-group
+    =f.input :name, label: false, placeholder: 'add name gallery', input_html: { class: 'form-control' }
+
+  .form-group
+    =f.input :description, as: :text, label: false, placeholder: 'add description gallery', input_html: { class: 'form-control', rows: 5 }
+
+  .form-group
+    =f.button :submit, class: 'btn btn-primary'

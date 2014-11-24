@@ -2,7 +2,22 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :admin do
+<<<<<<< HEAD
     resources :products
+=======
+
+    # resources :galleries do
+    #   resources :images
+    # end
+
+    #resource :subcategories
+
+    resources :products do
+      resources :galleries do
+        resources :images
+      end
+    end
+>>>>>>> gallery
 
     resources :categories do
       resources :subcategories

@@ -1,0 +1,16 @@
+.row
+  .col-md-12
+    %ul.nav.nav-tabs{ role: 'tablist' }
+      %li.active{ role: 'presentation' }
+        %a{ href: '#category', role: 'tab', 'data-toggle' => 'tab' } Category
+      %li{ role: 'presentation' }
+        %a{ href: '#subcategory', role: 'tab', 'data-toggle' => 'tab' } Subcategory
+
+    .jumbotron
+      .row
+        .tab-content
+          .tab-pane.active{ role: 'tabpanel', id: 'category' }
+            =render 'form'
+
+          .tab-pane{ role: 'tabpanel', id: 'subcategory' }
+            =render 'subcategories_show'
