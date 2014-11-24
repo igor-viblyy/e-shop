@@ -19,13 +19,13 @@ class Admin::SubcategoriesController < Admin::BaseController
   def update
     @subcategory.update_attributes(params_subcategory)
 
-    redirect_to admins_category_path(@category)
+    redirect_to admin_category_path(@category)
   end
 
   def destroy
     @subcategory.destroy
 
-    redirect_to admins_category_path(@category)
+    redirect_to admin_category_path(@category)
   end
 
   private
