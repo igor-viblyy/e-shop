@@ -1,9 +1,30 @@
-.jumbotron
-  .row
-    .col-md-12
-      %p
-        %strong Name:
-        =@gallery.name
-      %p
-        %strong Description:
-        =@gallery.description
+.row
+  .col-md-12
+    %ul.nav.nav-tabs{ role: 'tablist' }
+      %li.active{ role: 'presentation' }
+        %a{ href: '#gallery', role: 'tab', 'data-toggle' => 'tab' } Gallery
+      %li{ role: 'presentation' }
+        %a{ href: '#image', role: 'tab', 'data-toggle' => 'tab' } Image
+
+    .jumbotron
+      .row
+        .tab-content
+          .tab-pane.active{ role: 'tabpanel', id: 'gallery' }
+            .container
+              %p
+                %strong Name:
+                =@gallery.name
+              %p
+                %strong Description:
+                =@gallery.description
+              %p
+                %strong Product:
+                =@gallery.product.title
+              .btn-group{ role: 'group', 'aria-label' => 'action' }
+                =link_to 'Edit', edit_admin_gallery_path(@gallery), class: 'btn btn-warning', 'aria-label' => 'action'
+                =link_to 'Back', admin_galleries_path, class: 'btn btn-default', 'aria-label' => 'action'
+                =link_to 'Delete', admin_gallery_path(@gallery), method: :delete, class: 'btn btn-danger', 'aria-label' => 'action'
+
+          .tab-pane{ role: 'tabpanel', id: 'image' }
+            .container
+              =render 'image_form'

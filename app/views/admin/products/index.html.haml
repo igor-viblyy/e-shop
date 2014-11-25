@@ -1,12 +1,12 @@
 .jumbotron
   .add_button
-    =link_to "Add product", new_admins_product_path, class: 'btn btn-primary'
+    =link_to "Add product", new_admin_product_path, class: 'btn btn-primary'
   .container
     - @products.each do |product|
       .bs-callout-black.red
         .media
           .col-md-3
-            %a.media-left.media-middle{href: "#{admins_product_path(product)}"}
+            %a.media-left.media-middle{href: "#{admin_product_path(product)}"}
               =image_tag product.image_url(:thumb), class: 'img-responsive img-rounded img-thumbnail'
 
           .media-body
@@ -43,5 +43,5 @@
 
             %h5.media-heading
               %strong Action:
-              =link_to " ", edit_admins_product_path(product), class: 'glyphicon glyphicon-edit', title: 'edit'
-              =link_to " ", admins_product_path(product), method: :delete, class: 'glyphicon glyphicon-trash', title: 'delete'
+              =link_to " ", edit_admin_product_path(product), class: 'glyphicon glyphicon-edit', title: 'edit'
+              =link_to " ", admin_product_path(product), method: :delete, class: 'glyphicon glyphicon-trash', title: 'delete'

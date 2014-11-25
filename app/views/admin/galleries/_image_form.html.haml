@@ -1,0 +1,10 @@
+=simple_form_for ([:admin, @gallery, @gallery.images.build]), html: { role: 'form' } do |f|
+  .form-group
+    =f.input :name, label: false, placeholder: 'Add name image', input_html: { class: 'form-control' }
+  .form-group
+    =f.input :description, as: :text, label: false, placeholder: 'Add description image', input_html: { class: 'form-control', rows: 5 }
+  .form-group
+    =f.input :image, as: :file, label: false, input_html: { class: 'style: padding-top: 15px;' }
+  .form-group
+    =f.button :submit, class: 'btn btn-primary'
+    =link_to 'Back', admin_gallery_path(@gallery), class: 'btn btn-default'

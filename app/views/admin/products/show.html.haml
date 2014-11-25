@@ -1,7 +1,33 @@
-.container
-  .col-md-6
-    =image_tag @product.image_url(:show_image)
-  .col-md-6
-    .bs-callout.red
-      %h2= @product.title
+.jumbotron
+  .row
+    .container
+      .col-md-6
+        =image_tag @product.image_url(:show_image)
+      .col-md-6
+        %p
+          %strong Name:
+          =@product.title
+        %p
+          %strong Description:
+          %br
+          =@product.description
+        %p
+          %strong Price
+          =@product.price
+        %p
+          %strong Created:
+          =@product.created_at
+        %p
+          %strong Updated:
+          =@product.updated_at
+        %p
+          %strong Status:
+          -if @product.status?
+            %button.btn.btn-xs.btn-success{ type: 'button' } Active
+          -else
+            %button.btn.btn-xs.btn-danger{ type: 'button' } Not active
 
+        .btn-group{ role: 'group', 'aria-label' => 'action' }
+          =link_to "Edit", edit_admin_product_path(@product), class: 'btn btn-warning', 'aria-label' => 'action'
+          =link_to "Back", admin_products_path, class: 'btn btn-default', 'aria-label' => 'action'
+          =link_to "Delete", admin_product_path(@product), method: :delete, class: 'btn btn-danger', 'aria-label' => 'action'

@@ -1,3 +1,0 @@
-.jumbotron
-  .container
-    =render 'form'
