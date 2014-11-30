@@ -69,7 +69,7 @@ gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-ra
 
 gem 'rubocop', require: false
 gem 'simplecov', :require => false, group: :test
-
+gem 'newrelic_rpm'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
