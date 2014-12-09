@@ -1,6 +1,6 @@
 .jumbotron
   .add_button
-    =link_to "Add Gallery", new_admins_gallery_path, class: 'btn btn-primary'
+    =link_to "Add Gallery", new_admin_gallery_path, class: 'btn btn-primary'
   .row
     .col-md-12
       %table.table.table-striped
@@ -16,10 +16,10 @@
           - @galleries.each do |gallery|
             %tr
               %td= gallery.id
-              %td= link_to "#{gallery.name}", admins_gallery_path(gallery)
+              %td= link_to "#{gallery.name}", admin_gallery_path(gallery)
               %td= gallery.description
               %td= gallery.created_at
               %th= gallery.updated_at
               %td
-                =link_to " ", edit_admins_gallery_path(gallery), class: 'glyphicon glyphicon-edit'
-                =link_to " ", admins_gallery_path(gallery), method: :delete, class: 'glyphicon glyphicon-trash'
+                =link_to " ", edit_admin_gallery_path(gallery), class: 'glyphicon glyphicon-edit'
+                =link_to " ", admin_gallery_path(gallery), method: :delete, class: 'glyphicon glyphicon-trash'

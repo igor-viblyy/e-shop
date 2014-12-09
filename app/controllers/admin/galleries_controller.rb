@@ -1,31 +1,29 @@
 class Admin::GalleriesController < Admin::BaseController
 
-  #before_action 'find_gallery', only: [:show, :edit, :update, :destroy]
-  before_action 'find_product', only: [:create, :edit, :update, :destroy]
+  before_action 'find_gallery', only: [:show, :edit, :update, :destroy]
+  #before_action 'find_product', only: [:create, :edit, :update, :destroy]
 
-  add_breadcrumb "Galleries", :admins_galleries_path
+  add_breadcrumb "Galleries", :admin_galleries_path
 
   def index
-    @product.gallery = Gallery.all
+    @galleries = Gallery.all
   end
 
-  # def show
-  #   add_breadcrumb "#{@gallery.name}"
-  # end
+  def show
+    add_breadcrumb "#{@gallery.name}"
+  end
 
-  # def new
-  #   add_breadcrumb "New Gallery"
-  #   @gallery = Gallery.new
-  # end
+  def new
+    add_breadcrumb "New Gallery"
+    @gallery = Gallery.new
+  end
 
   def create
-    @gallery = @product.create_gallery(params_gallery)
-    @gallery = @product.gallery
 
-    #redirect_to admins_product_path(@product)
+    @gallery = Gallery.create(params_gallery)
 
-    if @product.gallery.save
-      redirect_to admins_product_path(@product)
+    if @gallery.save
+      redirect_to admin_gallery_path(@gallery)
     end
 
   end
