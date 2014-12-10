@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :subcategories, dependent: :destroy
+  acts_as_nested_set
 
-  validates :name, presence: true
+  #validates :name, presence: true
 end

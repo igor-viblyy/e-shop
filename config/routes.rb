@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :admins do
-    resources :categories do
-      resources :subcategories
-    end
+    resources :categories
 
     resources :users
 
