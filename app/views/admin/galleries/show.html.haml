@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .row
   .col-md-12
     %ul.nav.nav-tabs{ role: 'tablist' }
@@ -28,3 +29,17 @@
           .tab-pane{ role: 'tabpanel', id: 'image' }
             .container
               =render 'image_form'
+=======
+.jumbotron
+  .row
+    .col-md-12
+      %p
+        %strong Name:
+        =@gallery.name
+      %p
+        %strong Description:
+        =@gallery.description
+      %p
+        %strong Product:
+        =@gallery.product.title
+>>>>>>> categories

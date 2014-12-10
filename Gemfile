@@ -67,6 +67,8 @@ gem 'breadcrumbs_on_rails'
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 
+gem 'awesome_nested_set'
+
 gem 'rubocop', require: false
 gem 'simplecov', :require => false, group: :test
 gem 'newrelic_rpm'

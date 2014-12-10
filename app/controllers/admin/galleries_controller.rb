@@ -1,6 +1,10 @@
 class Admin::GalleriesController < Admin::BaseController
 
   before_action 'find_gallery', only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
+=======
+  #before_action 'find_product', only: [:create, :edit, :update, :destroy]
+>>>>>>> categories
 
   add_breadcrumb "Galleries", :admin_galleries_path
 
@@ -14,11 +18,23 @@ class Admin::GalleriesController < Admin::BaseController
 
   def new
     add_breadcrumb "New Gallery"
+<<<<<<< HEAD
 
     @gallery = Gallery.new
 
     if @gallery.id == true
       @image = @gallery.images.new
+=======
+    @gallery = Gallery.new
+  end
+
+  def create
+
+    @gallery = Gallery.create(params_gallery)
+
+    if @gallery.save
+      redirect_to admin_gallery_path(@gallery)
+>>>>>>> categories
     end
   end
 

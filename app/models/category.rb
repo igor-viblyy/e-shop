@@ -10,8 +10,12 @@
 #
 
 class Category < ActiveRecord::Base
+<<<<<<< HEAD
+  acts_as_nested_set
+=======
   has_many :subcategories, dependent: :destroy
   has_many :products, dependent: :destroy
+>>>>>>> gallery
 
-  validates :name, presence: true
+  #validates :name, presence: true
 end

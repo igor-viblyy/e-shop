@@ -17,7 +17,11 @@
           - @galleries.each do |gallery|
             %tr
               %td= gallery.id
+<<<<<<< HEAD
               %td= link_to gallery.name, admin_gallery_path(gallery)
+=======
+              %td= link_to "#{gallery.name}", admin_gallery_path(gallery)
+>>>>>>> categories
               %td= gallery.description
               %td= gallery.created_at
               %td= gallery.updated_at
