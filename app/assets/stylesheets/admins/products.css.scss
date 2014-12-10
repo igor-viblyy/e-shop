@@ -1,0 +1,41 @@
+// Place all the styles related to the Admins::Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bs-callout
+{
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+
+  &.red
+  {
+    border-left-color: #d9534f;
+  }
+
+  &.green
+  {
+    border-left-color: #32cd32;
+  }
+}
+
+.bs-callout-black
+{
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #000;
+  border-left-width: 5px;
+  border-radius: 3px;
+
+  &.red
+  {
+    border-left-color: #d9534f;
+  }
+
+  &.green
+  {
+    border-left-color: #32cd32;
+  }
+}

@@ -1,0 +1,25 @@
+.jumbotron
+  .add_button
+    =link_to "Add Gallery", new_admin_gallery_path, class: 'btn btn-primary'
+  .row
+    .col-md-12
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Id
+            %th Name
+            %th Description
+            %th Created
+            %th Updated
+            %th Action
+        %tbody
+          - @galleries.each do |gallery|
+            %tr
+              %td= gallery.id
+              %td= link_to "#{gallery.name}", admin_gallery_path(gallery)
+              %td= gallery.description
+              %td= gallery.created_at
+              %th= gallery.updated_at
+              %td
+                =link_to " ", edit_admin_gallery_path(gallery), class: 'glyphicon glyphicon-edit'
+                =link_to " ", admin_gallery_path(gallery), method: :delete, class: 'glyphicon glyphicon-trash'

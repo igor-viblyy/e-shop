@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141209201649) do
+=======
+ActiveRecord::Schema.define(version: 20141111084540) do
+>>>>>>> gallery
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +34,43 @@ ActiveRecord::Schema.define(version: 20141209201649) do
   add_index "categories", ["subcategory_id"], name: "index_categories_on_subcategory_id", using: :btree
 
   create_table "galleries", force: true do |t|
+<<<<<<< HEAD
+=======
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "product_id"
+  end
+
+  add_index "galleries", ["product_id"], name: "index_galleries_on_product_id", using: :btree
+
+  create_table "images", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "gallery_id_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.float    "price"
+    t.boolean  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+    t.integer  "subcategory_id"
+    t.string   "image"
+  end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+  add_index "products", ["subcategory_id"], name: "index_products_on_subcategory_id", using: :btree
+
+  create_table "subcategories", force: true do |t|
+>>>>>>> gallery
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"

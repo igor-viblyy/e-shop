@@ -1,6 +1,0 @@
--@category.subcategories.each do |subcategory|
-  %p
-    %strong Subcategory Name:
-    %i=subcategory.name
-    =link_to " ", [:admins, subcategory.category, subcategory], class: "glyphicon glyphicon-edit"
-    =link_to " ", [:admins, subcategory.category, subcategory], method: :delete, class: "glyphicon glyphicon-trash"

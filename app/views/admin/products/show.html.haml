@@ -1,0 +1,7 @@
+.container
+  .col-md-6
+    =image_tag @product.image_url(:show_image)
+  .col-md-6
+    .bs-callout.red
+      %h2= @product.title
+
