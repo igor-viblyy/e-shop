@@ -7,15 +7,17 @@
 #  created_at     :datetime
 #  updated_at     :datetime
 #  subcategory_id :integer
+#  parent_id      :integer
+#  lft            :integer
+#  rgt            :integer
+#  depth          :integer
 #
 
 class Category < ActiveRecord::Base
-<<<<<<< HEAD
+  
   acts_as_nested_set
-=======
-  has_many :subcategories, dependent: :destroy
-  has_many :products, dependent: :destroy
->>>>>>> gallery
+  
+  accepts_nested_attributes_for :children
 
-  #validates :name, presence: true
+  validates :name, presence: true
 end

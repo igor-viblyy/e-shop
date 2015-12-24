@@ -1,23 +1,14 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-<<<<<<< HEAD
-  namespace :admins do
-    resources :categories
-=======
   namespace :admin do
-    
+    resources :categories
+
     resources :galleries do
-        resources :images
+      resources :images
     end
 
     resources :products
-
-    resources :categories do
-      resources :subcategories
-    end
->>>>>>> gallery
-
     resources :users
 
     root 'base#index'

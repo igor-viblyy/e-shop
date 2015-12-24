@@ -2,12 +2,12 @@
 #
 # Table name: galleries
 #
-#  id            :integer          not null, primary key
-#  name          :string(255)
-#  description   :text
-#  product_id_id :integer
-#  created_at    :datetime
-#  updated_at    :datetime
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  product_id  :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

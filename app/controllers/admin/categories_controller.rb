@@ -16,8 +16,8 @@ class Admin::CategoriesController < Admin::BaseController
     add_breadcrumb "New Category", new_admin_category_path
     @category = Category.new
 
-    if @category.id?
-      @subcategory = @category.subcategories.new
+    if @category
+      @subcategory = @category.children.build(@category.name)
     end
   end
 
